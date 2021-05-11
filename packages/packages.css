@@ -56,6 +56,12 @@ main {
     color: #0e4f1f;
     padding: 1rem;
     font-size: 1.2rem;
+    /* font-family: 'Roboto', sans-serif; */
+    /* text-shadow: 2px 2px 20px gray; */
+    /* text-decoration: underline red; */
+    /* font-variant: small-caps; */
+    /* font: italic small-caps  700 1.2rem 'Roboto', sans-serif; */
+    /* font Shorthand: font-style font-varian font-weight font-size font-family */
 }
 
 .clear-fix {
