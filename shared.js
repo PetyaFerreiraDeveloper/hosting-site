@@ -1,5 +1,6 @@
 let backdrop = document.querySelector('.backdrop');
 let modal = document.querySelector('.modal');
+let ctaButton = document.querySelector('.main-nav__item--cta');
 
 // add an event listner to the choose plan buttons, 
 // which will open the modal when a button is clicked
@@ -51,3 +52,16 @@ toggleButton.addEventListener('click', function() {
     mobileNav.classList.add('open');
     backdrop.classList.add('open');
 });
+
+// Listent up for the animation on the cta button
+ctaButton.addEventListener('animationstart', function (event) {
+    console.log('Animation started', event);
+})
+
+ctaButton.addEventListener('animationend', function (event) {
+    console.log('Animation ended', event);
+})
+
+ctaButton.addEventListener('animationiteration', function (event) {
+    console.log('Animation iteration', event);
+})

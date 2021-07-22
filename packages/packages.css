@@ -10,29 +10,37 @@ main {
     height: 100vh;
     z-index: -1;
 }
-.package{
+
+.package {
     width: 80%;
     background: #d5ffdc;
     border: #0e4f1f solid 4px;
     border-left: none;
     margin: 1rem 0;
     position: relative;
+    overflow: hidden; /* any elements that go out of the package will be cropped*/
 }
 
 .plan-badge {
     position: absolute; /* like fixed it takes the element out of the flow and positions it related to the parent, if there is a parent element with a position property. Otherwise it is positioned in relation to the html element.*/
     top: 0;
     right: 0;
-    margin: 1.2rem;
+    margin: 0;
     font-size: 0.8rem;
     color: white;
     background: #ff5454;
     padding: 0.5rem;
+    transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+    transform-origin: center; /* around which point we want to rotate */
+    width: 12rem;
+    text-align: center;
 }
+
 .package:hover,
-.package:active{
+.package:active {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border-color: #ff5454;
+    animation: move-up 300ms ease-out forwards;
 }
 
 .plan-tile {
@@ -116,5 +124,14 @@ main {
     #free:hover,
     #free:active {
         border-right-color: #ff5454;
+    }
+}
+
+@keyframes move-up {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1rem);
     }
 }

@@ -30,9 +30,13 @@
 
 .plan {
     background: #d5ffdc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
     padding: 1rem;
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem;
     width: 100%;
 }
 
@@ -59,10 +63,12 @@
 
 .plan__title {
     color: #0e4f1f;
+    margin: 0.5rem;
 }
 
 .plan__price  {
     color: #858585;
+    margin: 0.5rem;
 }
 
 .plan__features{
@@ -73,20 +79,21 @@
 
 @media (min-width: 40rem) {
     .plan-list {
-        width: 100%;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
     .plan {
-        display: inline-block;
-        width: 30%;
-        vertical-align: middle;
-        min-width: 13rem;
         max-width: 25rem;
+        height: 28rem;
     }
     .plan__highlighted {
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+        height: 30rem;
     }
 }
+
 .plan__features li {
     margin: 0.5rem 0;
 }
@@ -96,27 +103,31 @@
     margin-top: 5rem;
     padding: 1rem;
 }
+
 #key-features .section-title {
     color: white;
     margin: 2rem;
 }
+
 .key-feature__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 @media (min-width: 40rem) {
     .key-feature__list {
-        text-align: center;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
     }
 
     .key-feature {
-        display: inline-block;
         width: 30%;
         max-width: 25rem;
-        vertical-align: top;
     }
 }
 .key-feature__image {
@@ -137,7 +148,10 @@
 
 .modal {
     position: fixed;
-    display: none;
+    opacity: 0;
+    transform: translateY(-3rem);
+    transition: opacity 0.2s ease-out, transform 0.5s ease-out;
+    /* display: none; */
     z-index: 200;
     top: 20%;
     left: 30%;
